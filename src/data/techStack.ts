@@ -11,9 +11,19 @@ export const techStack: TechStackItem[] = [
   { id: 'langchain', name: 'LangChain', category: 'AI & LLM', proficiency: 'primary' },
   { id: 'langgraph', name: 'LangGraph', category: 'AI & LLM', proficiency: 'primary' },
   { id: 'claude', name: 'Claude', category: 'AI & LLM', proficiency: 'primary' },
-  { id: 'mcp', name: 'MCP', category: 'AI & LLM', proficiency: 'secondary' },
+  { id: 'mcp', name: 'MCP', category: 'AI & LLM', proficiency: 'primary' },
+  { id: 'ucp', name: 'UCP', category: 'AI & LLM', proficiency: 'primary' },
   { id: 'rag', name: 'RAG Pipelines', category: 'AI & LLM', proficiency: 'primary' },
   { id: 'vectordb', name: 'Vector DBs', category: 'AI & LLM', proficiency: 'secondary' },
+
+  // E-commerce AI Tools
+  { id: 'shopify', name: 'Shopify', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'woocommerce', name: 'WooCommerce', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'amazon', name: 'Amazon SP-API', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'orderautomation', name: 'Order Automation', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'inventoryai', name: 'Inventory AI', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'aisearch', name: 'AI Search', category: 'E-commerce AI', proficiency: 'primary' },
+  { id: 'productfeed', name: 'Product Feeds', category: 'E-commerce AI', proficiency: 'secondary' },
 
   // Development
   { id: 'fastapi', name: 'FastAPI', category: 'Development', proficiency: 'primary' },
@@ -39,6 +49,7 @@ export const techStack: TechStackItem[] = [
 export const techCategories = [
   'Languages',
   'AI & LLM',
+  'E-commerce AI',
   'Development',
   'Automation',
   'Project Management',

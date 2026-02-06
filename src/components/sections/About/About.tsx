@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { HiAcademicCap, HiBriefcase, HiCheckBadge } from 'react-icons/hi2';
+import { HiSparkles, HiRocketLaunch, HiCpuChip } from 'react-icons/hi2';
 import { SectionWrapper } from '../../ui/SectionWrapper';
 import './About.css';
 
@@ -8,93 +8,114 @@ export function About() {
     <SectionWrapper
       id="about"
       title="About"
-      subtitle="Get to know me and my journey"
+      subtitle="Who I am"
     >
-      <div className="about-content">
+      <div className="about-bento">
+        {/* Main intro card - large */}
         <motion.div
-          className="about-text"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="bento-card bento-main"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          <p className="about-intro">
-            I help businesses and startups deliver software projects faster, smarter,
-            and more efficiently by combining <strong>Agile project management</strong> with{' '}
-            <strong>AI-powered agentic workflows</strong>.
+          <div className="bento-glow" />
+          <p className="bento-intro">
+            I build <span className="text-gradient">autonomous AI systems</span> that help businesses
+            operate smarter. From e-commerce automation to complex agentic workflows—I turn ideas
+            into production-ready solutions.
           </p>
+        </motion.div>
 
-          <p>
-            From building autonomous AI agents to managing complex software projects,
-            I bridge the gap between technology, operations, and business impact.
-            As a Technical Software Project Manager, I leverage AI to automate
-            operational tasks, optimize processes, and ensure projects are delivered
-            on time and aligned with business goals.
-          </p>
-
-          <div className="about-highlights">
-            <div className="highlight-item">
-              <HiCheckBadge className="highlight-icon" />
-              <div>
-                <strong>100% Job Success Rate</strong>
-                <span>on Upwork across all projects</span>
-              </div>
-            </div>
-            <div className="highlight-item">
-              <HiBriefcase className="highlight-icon" />
-              <div>
-                <strong>4+ Years Experience</strong>
-                <span>in AI/ML, web dev, and automation</span>
-              </div>
-            </div>
-            <div className="highlight-item">
-              <HiAcademicCap className="highlight-icon" />
-              <div>
-                <strong>MS Software Project Management</strong>
-                <span>FAST NUCES (2025-2027)</span>
-              </div>
-            </div>
+        {/* Specialty cards */}
+        <motion.div
+          className="bento-card bento-specialty"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          whileHover={{ y: -5 }}
+        >
+          <div className="bento-icon">
+            <HiCpuChip />
           </div>
+          <h3>E-commerce AI Builder</h3>
+          <p>AI agents for orders, support, and product discovery at scale.</p>
         </motion.div>
 
         <motion.div
-          className="about-cards"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className="bento-card bento-specialty"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ y: -5 }}
         >
-          <div className="about-card">
-            <div className="about-card-header">
-              <span className="mono text-primary">01</span>
-              <h3>AI That Delivers ROI</h3>
-            </div>
-            <p>
-              I don't just build AI tools—I build AI solutions that solve real
-              business problems and deliver measurable results.
-            </p>
+          <div className="bento-icon">
+            <HiSparkles />
           </div>
+          <h3>ROI-Focused</h3>
+          <p>Solutions that solve real problems and deliver measurable results.</p>
+        </motion.div>
 
-          <div className="about-card">
-            <div className="about-card-header">
-              <span className="mono text-primary">02</span>
-              <h3>E-commerce Specialist</h3>
-            </div>
-            <p>
-              Deep expertise in e-commerce automation, from order processing
-              to customer support AI agents that scale with your business.
-            </p>
+        <motion.div
+          className="bento-card bento-specialty"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ y: -5 }}
+        >
+          <div className="bento-icon">
+            <HiRocketLaunch />
           </div>
+          <h3>Fast Execution</h3>
+          <p>From concept to production with clean, maintainable code.</p>
+        </motion.div>
 
-          <div className="about-card">
-            <div className="about-card-header">
-              <span className="mono text-primary">03</span>
-              <h3>Fast Execution</h3>
-            </div>
-            <p>
-              From idea to production quickly. Clean, maintainable,
-              well-documented solutions that your team can build upon.
-            </p>
+        {/* Code snippet decoration */}
+        <motion.div
+          className="bento-card bento-code"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="code-header">
+            <span className="code-dot code-dot-red" />
+            <span className="code-dot code-dot-yellow" />
+            <span className="code-dot code-dot-green" />
+            <span className="code-title mono">agent.py</span>
+          </div>
+          <pre className="code-content mono">
+            <code>
+              <span className="code-keyword">async def</span>{' '}
+              <span className="code-function">process_order</span>(order):
+              {'\n'}    agent = <span className="code-class">AIAgent</span>(
+              {'\n'}        model=<span className="code-string">"gpt-4"</span>,
+              {'\n'}        tools=[inventory, shipping]
+              {'\n'}    )
+              {'\n'}    <span className="code-keyword">return await</span> agent.<span className="code-function">execute</span>(order)
+            </code>
+          </pre>
+        </motion.div>
+
+        {/* Stats card */}
+        <motion.div
+          className="bento-card bento-stats"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <div className="stat-item">
+            <span className="stat-number">4+</span>
+            <span className="stat-label">Years Experience</span>
+          </div>
+          <div className="stat-divider" />
+          <div className="stat-item">
+            <span className="stat-number">AI/ML</span>
+            <span className="stat-label">Specialization</span>
           </div>
         </motion.div>
       </div>

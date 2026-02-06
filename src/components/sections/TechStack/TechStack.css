@@ -1,86 +1,189 @@
-.tech-categories {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-10);
-}
-
-.tech-category-title {
-  font-size: var(--text-sm);
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.tech-items {
+/* Tech Stack Grid */
+.tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
 
-@media (max-width: 640px) {
-  .tech-items {
+@media (max-width: 1024px) {
+  .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-5);
+@media (max-width: 640px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* Category Card */
+.tech-card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  padding: var(--space-5);
   transition: all var(--transition-base);
-  cursor: default;
 }
 
-.tech-item:hover {
+@media (max-width: 480px) {
+  .tech-card {
+    padding: var(--space-4);
+  }
+}
+
+.tech-card:hover {
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 0 20px rgba(38, 128, 235, 0.08);
 }
 
-.tech-item-icon {
-  width: 48px;
-  height: 48px;
+/* Card Header */
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tech-card-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-elevated);
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary-light);
   border-radius: var(--radius-md);
-  font-size: 20px;
+  color: var(--color-primary);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .tech-card-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+.tech-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Tech Pills Container */
+.tech-card-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Individual Tech Pill */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: default;
+  transition: all var(--transition-fast);
+}
+
+@media (max-width: 480px) {
+  .tech-pill {
+    padding: 5px 8px;
+    gap: 4px;
+  }
+}
+
+.tech-pill:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-card-hover);
+}
+
+/* Primary skill highlight */
+.tech-pill-primary {
+  background: var(--color-primary-light);
+  border-color: rgba(38, 128, 235, 0.25);
+}
+
+.tech-pill-primary:hover {
+  background: rgba(38, 128, 235, 0.15);
+  border-color: var(--color-primary);
+}
+
+.tech-pill-primary .tech-pill-icon {
   color: var(--color-primary);
 }
 
-.tech-icon-placeholder {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: var(--text-lg);
+/* Pill Icon */
+.tech-pill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
 }
 
-.tech-item-name {
-  font-size: var(--text-sm);
+@media (max-width: 480px) {
+  .tech-pill-icon {
+    font-size: 11px;
+  }
+}
+
+.tech-pill:hover .tech-pill-icon {
+  color: var(--color-primary);
+}
+
+/* Pill Name */
+.tech-pill-name {
+  font-size: 11px;
   font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .tech-pill-name {
+    font-size: 10px;
+  }
+}
+
+.tech-pill:hover .tech-pill-name {
   color: var(--color-text);
-  text-align: center;
 }
 
-.tech-proficiency {
-  width: 100%;
-  height: 3px;
-  background: var(--color-border);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  margin-top: var(--space-1);
+.tech-pill-primary .tech-pill-name {
+  color: var(--color-text);
 }
 
-.tech-proficiency-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
-  border-radius: var(--radius-full);
-  transition: width 0.5s ease-out;
+/* Light Mode Improvements */
+[data-theme="light"] .tech-card {
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .tech-card:hover {
+  box-shadow: 0 4px 20px rgba(29, 111, 209, 0.12);
+}
+
+[data-theme="light"] .tech-pill {
+  background: var(--color-surface);
+}
+
+[data-theme="light"] .tech-pill-primary {
+  background: rgba(29, 111, 209, 0.1);
+  border-color: rgba(29, 111, 209, 0.3);
+}
+
+[data-theme="light"] .tech-pill-primary:hover {
+  background: rgba(29, 111, 209, 0.15);
 }

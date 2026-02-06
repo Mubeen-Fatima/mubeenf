@@ -1,5 +1,12 @@
 import { motion } from 'framer-motion';
-import { HiArrowDown, HiSparkles } from 'react-icons/hi2';
+import {
+  HiCodeBracket,
+  HiCpuChip,
+  HiCommandLine,
+  HiSparkles,
+  HiCloud
+} from 'react-icons/hi2';
+import { SiPython, SiOpenai } from 'react-icons/si';
 import { Button } from '../../ui/Button';
 import './Hero.css';
 
@@ -8,144 +15,153 @@ export function Hero() {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToPortfolio = () => {
-    document.querySelector('#portfolio')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // Floating tech elements - mix of icons and text
+  const floatingElements = [
+    { content: <HiCodeBracket />, x: '6%', y: '22%', type: 'icon' },
+    { content: 'AI', x: '90%', y: '18%', type: 'text' },
+    { content: <HiCommandLine />, x: '8%', y: '68%', type: 'icon' },
+    { content: 'async', x: '88%', y: '62%', type: 'text' },
+    { content: <SiPython />, x: '4%', y: '45%', type: 'icon' },
+    { content: <HiSparkles />, x: '92%', y: '40%', type: 'icon' },
+    { content: '{ }', x: '14%', y: '82%', type: 'text' },
+    { content: <HiCloud />, x: '85%', y: '78%', type: 'icon' },
+    { content: <SiOpenai />, x: '12%', y: '35%', type: 'icon' },
+    { content: '</>', x: '86%', y: '30%', type: 'text' },
+    { content: <HiCpuChip />, x: '3%', y: '58%', type: 'icon' },
+    { content: 'api', x: '94%', y: '52%', type: 'text' },
+  ];
 
   return (
     <section id="home" className="hero">
+      {/* Noise Texture Overlay */}
+      <div className="hero-texture" />
+
       {/* Animated Background */}
       <div className="hero-bg">
-        <div className="hero-grid" />
-        <div className="hero-glow" />
-        <FloatingCode />
+        {/* Primary gradient - center */}
+        <motion.div
+          className="hero-gradient hero-gradient-1"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Secondary gradient - top right */}
+        <motion.div
+          className="hero-gradient hero-gradient-2"
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.15, 0.25, 0.15],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Tertiary gradient - bottom left */}
+        <motion.div
+          className="hero-gradient hero-gradient-3"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Floating tech icons and text */}
+        {floatingElements.map((item, index) => (
+          <motion.div
+            key={index}
+            className={`hero-float-item ${item.type === 'text' ? 'hero-float-text' : 'hero-float-icon'}`}
+            style={{ left: item.x, top: item.y }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0.2, 0.35, 0.2],
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 5 + index * 0.3,
+              delay: index * 0.15,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            {item.content}
+          </motion.div>
+        ))}
       </div>
 
       <div className="hero-content container">
         <motion.div
           className="hero-badge"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
         >
-          <HiSparkles />
-          <span>Available for new projects</span>
-        </motion.div>
-
-        <motion.h1
-          className="hero-title"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          Hi, I'm <span className="text-gradient">Mubeen F.</span>
-        </motion.h1>
-
-        <motion.div
-          className="hero-subtitle-wrapper"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <span className="hero-subtitle mono">AI Agentic Engineer</span>
+          <span className="hero-badge-dot" />
+          <span>Available for projects</span>
         </motion.div>
 
         <motion.p
-          className="hero-description"
-          initial={{ opacity: 0, y: 30 }}
+          className="hero-greeting"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
         >
-          I build AI-powered automation systems that think, decide, and act.
-          Specializing in <strong>e-commerce automation</strong> and{' '}
-          <strong>agentic workflows</strong> that deliver real ROI.
+          Hello, I am
+        </motion.p>
+
+        <motion.h1
+          className="hero-name"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Mubeen F.
+        </motion.h1>
+
+        <motion.h2
+          className="hero-title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
+          <span className="text-gradient">E-commerce AI Agents</span> Builder
+        </motion.h2>
+
+        <motion.p
+          className="hero-description"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          I create autonomous AI systems for e-commerce automation and agentic workflows
+          that help businesses operate smarter and scale faster.
         </motion.p>
 
         <motion.div
-          className="hero-stats"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="hero-stat">
-            <span className="hero-stat-value">100%</span>
-            <span className="hero-stat-label">Job Success</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <span className="hero-stat-value">9+</span>
-            <span className="hero-stat-label">Projects</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <span className="hero-stat-value">$3.4k+</span>
-            <span className="hero-stat-label">Earned</span>
-          </div>
-        </motion.div>
-
-        <motion.div
           className="hero-actions"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Button size="lg" onClick={scrollToContact}>
-            Let's Work Together
+          <Button onClick={scrollToContact}>
+            Contact Now
           </Button>
-          <Button variant="secondary" size="lg" onClick={scrollToPortfolio}>
-            View My Work
-          </Button>
-        </motion.div>
-
-        <motion.div
-          className="hero-scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <HiArrowDown />
-          </motion.div>
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function FloatingCode() {
-  const codeSnippets = [
-    'async def', 'agent.run()', 'LangChain', 'RAG', 'vector_db',
-    'await', 'openai', 'workflow', 'automate', 'API',
-  ];
-
-  return (
-    <div className="floating-code">
-      {codeSnippets.map((snippet, i) => (
-        <motion.span
-          key={i}
-          className="code-snippet mono"
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: [0, 0.15, 0],
-            y: [-20, -100],
-          }}
-          transition={{
-            duration: 8,
-            delay: i * 0.8,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          style={{
-            left: `${10 + (i * 9)}%`,
-            top: `${60 + (i % 3) * 15}%`,
-          }}
-        >
-          {snippet}
-        </motion.span>
-      ))}
-    </div>
   );
 }

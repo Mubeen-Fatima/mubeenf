@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { HiCpuChip, HiCog6Tooth, HiChartBar } from 'react-icons/hi2';
+import { HiCpuChip, HiShoppingCart, HiChartBar, HiArrowRight } from 'react-icons/hi2';
 import { SectionWrapper } from '../../ui/SectionWrapper';
 import { services } from '../../../data/services';
 import './Services.css';
 
 const iconMap: Record<string, typeof HiCpuChip> = {
   brain: HiCpuChip,
-  cog: HiCog6Tooth,
+  cart: HiShoppingCart,
   chart: HiChartBar,
 };
 
@@ -15,38 +15,58 @@ export function Services() {
     <SectionWrapper
       id="services"
       title="Services"
-      subtitle="What I can help you build"
+      subtitle="What I build"
       dark
     >
-      <div className="services-grid">
+      <div className="services-container">
         {services.map((service, index) => {
           const Icon = iconMap[service.icon] || HiCpuChip;
           return (
             <motion.div
               key={service.id}
               className="service-card"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <div className="service-icon">
-                <Icon />
+              <div className="service-card-inner">
+                {/* Animated border */}
+                <div className="service-border" />
+
+                {/* Number */}
+                <span className="service-number mono">0{index + 1}</span>
+
+                {/* Icon */}
+                <motion.div
+                  className="service-icon"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <Icon />
+                </motion.div>
+
+                {/* Content */}
+                <h3 className="service-title">{service.name}</h3>
+
+                <ul className="service-list">
+                  {service.offerings.map((offering, i) => (
+                    <motion.li
+                      key={offering}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
+                    >
+                      <HiArrowRight className="service-list-icon" />
+                      <span>{offering}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                {/* Hover glow */}
+                <div className="service-glow" />
               </div>
-
-              <div className="service-number mono">0{index + 1}</div>
-
-              <h3 className="service-title">{service.name}</h3>
-              <p className="service-description">{service.description}</p>
-
-              <ul className="service-offerings">
-                {service.offerings.map((offering) => (
-                  <li key={offering}>
-                    <span className="offering-bullet" />
-                    {offering}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           );
         })}
