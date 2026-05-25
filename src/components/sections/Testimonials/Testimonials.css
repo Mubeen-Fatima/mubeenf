@@ -50,7 +50,7 @@
 }
 
 .testimonial-card {
-  padding: var(--space-8);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -79,17 +79,11 @@
 
 /* Quote */
 .testimonial-quote {
-  font-size: var(--text-lg);
+  font-size: var(--fluid-lg);
   color: var(--color-text);
   line-height: 1.8;
   margin: 0 0 var(--space-6);
   font-style: italic;
-}
-
-@media (max-width: 640px) {
-  .testimonial-quote {
-    font-size: var(--text-base);
-  }
 }
 
 /* Author */
@@ -99,6 +93,7 @@
   justify-content: center;
   gap: var(--space-4);
   margin-bottom: var(--space-4);
+  flex-wrap: wrap;
 }
 
 .testimonial-avatar {

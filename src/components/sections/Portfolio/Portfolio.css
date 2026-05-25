@@ -1,7 +1,7 @@
 .portfolio-featured {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: clamp(var(--space-4), 2vw, var(--space-5));
 }
 
 .portfolio-subtitle {
@@ -84,13 +84,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: var(--space-8);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   color: inherit;
-  gap: var(--space-5);
+  gap: clamp(var(--space-3), 2vw, var(--space-5));
   transition: background var(--transition-fast);
 }
 
@@ -117,7 +117,7 @@
 
 .project-name {
   font-family: var(--font-sans);
-  font-size: var(--text-xl);
+  font-size: var(--fluid-xl);
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: var(--space-3);
@@ -159,9 +159,9 @@
 }
 
 .project-details-content {
-  padding: 0 var(--space-8) var(--space-8);
+  padding: 0 clamp(var(--space-6), 4vw, var(--space-8)) clamp(var(--space-6), 4vw, var(--space-8));
   border-top: 1px solid var(--color-border);
-  padding-top: var(--space-8);
+  padding-top: clamp(var(--space-6), 4vw, var(--space-8));
 }
 
 .project-section {

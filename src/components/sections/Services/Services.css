@@ -1,18 +1,12 @@
 .services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(var(--space-5), 2vw, var(--space-6));
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1100px) {
   .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .services-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -32,7 +26,7 @@
 .service-card-inner {
   position: relative;
   height: 100%;
-  padding: var(--space-8);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
   background: var(--color-bg-card);
   border-radius: calc(var(--radius-xl) - 1px);
   overflow: hidden;
@@ -98,7 +92,7 @@
 /* Title */
 .service-title {
   font-family: var(--font-sans);
-  font-size: var(--text-xl);
+  font-size: var(--fluid-xl);
   font-weight: 600;
   margin-bottom: var(--space-5);
   color: var(--color-text);

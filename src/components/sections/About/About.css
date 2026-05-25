@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto;
-  gap: var(--space-5);
+  gap: clamp(var(--space-4), 2vw, var(--space-5));
 }
 
 @media (max-width: 1024px) {
@@ -24,7 +24,7 @@
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
   overflow: hidden;
   transition: all var(--transition-base);
 }
@@ -41,6 +41,13 @@
   min-height: 200px;
 }
 
+@media (max-width: 640px) {
+  .bento-main {
+    grid-column: 1 / -1;
+    min-height: 0;
+  }
+}
+
 .bento-glow {
   position: absolute;
   top: -50%;
@@ -55,17 +62,11 @@
 
 .bento-intro {
   position: relative;
-  font-size: var(--text-xl);
+  font-size: var(--fluid-xl);
   font-weight: 500;
   line-height: 1.6;
   color: var(--color-text);
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .bento-intro {
-    font-size: var(--text-lg);
-  }
 }
 
 /* Specialty cards */
@@ -124,6 +125,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .bento-code {
+    grid-column: 1 / -1;
+  }
+}
+
 .code-header {
   display: flex;
   align-items: center;
@@ -150,12 +157,20 @@
 }
 
 .code-content {
-  padding: var(--space-6);
-  font-size: var(--text-sm);
+  padding: clamp(var(--space-4), 3vw, var(--space-6));
+  font-size: clamp(0.7rem, 2vw, var(--text-sm));
   line-height: 1.8;
   color: var(--color-text-secondary);
   overflow-x: auto;
   margin: 0;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre;
+}
+
+@media (max-width: 480px) {
+  .code-content {
+    line-height: 1.6;
+  }
 }
 
 .code-keyword { color: #a78bfa; }
@@ -169,14 +184,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-10);
+  gap: clamp(var(--space-4), 4vw, var(--space-10));
+  flex-wrap: wrap;
   background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-bg-elevated) 100%);
 }
 
 @media (max-width: 640px) {
   .bento-stats {
-    grid-column: span 1;
-    gap: var(--space-6);
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 380px) {
+  .stat-divider {
+    display: none;
   }
 }
 
@@ -207,6 +228,13 @@
   width: 1px;
   height: 60px;
   background: var(--color-border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .stat-divider {
+    height: 40px;
+  }
 }
 
 .text-primary {
