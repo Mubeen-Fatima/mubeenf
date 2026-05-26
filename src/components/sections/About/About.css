@@ -12,9 +12,63 @@
   }
 }
 
+/* Tablet: 2-col (already handled at 1024px) */
+/* Phone: keep 2-col so specialty cards pair up nicely */
 @media (max-width: 640px) {
   .about-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 3rd specialty card (4th grid child) is the odd one — span full width, go horizontal */
+  .about-bento > div:nth-child(4) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .about-bento > div:nth-child(4) .bento-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+
+  /* Shrink icons on paired specialty cards to breathe better in half-width */
+  .bento-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    margin-bottom: var(--space-4);
+  }
+
+  .bento-specialty h3 {
+    font-size: var(--text-base);
+  }
+
+  .bento-specialty p {
+    font-size: var(--text-sm);
+  }
+}
+
+/* Very small phones: fully single-col, all horizontal */
+@media (max-width: 400px) {
+  .about-bento {
     grid-template-columns: 1fr;
+  }
+
+  .bento-specialty {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .bento-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 2px;
   }
 }
 
@@ -45,6 +99,7 @@
   .bento-main {
     grid-column: 1 / -1;
     min-height: 0;
+    /* intro text is readable at smaller fluid size on 2-col header */
   }
 }
 
@@ -69,9 +124,17 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .bento-intro {
+    font-size: var(--fluid-lg);
+  }
+}
+
 /* Specialty cards */
 .bento-specialty {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .bento-specialty:hover .bento-icon {
@@ -91,7 +154,12 @@
   color: var(--color-primary);
   font-size: 28px;
   margin-bottom: var(--space-5);
+  flex-shrink: 0;
   transition: all var(--transition-base);
+}
+
+.bento-specialty-body {
+  flex: 1;
 }
 
 .bento-specialty h3 {
@@ -210,7 +278,7 @@
 
 .stat-number {
   font-family: var(--font-sans);
-  font-size: var(--text-3xl);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1;

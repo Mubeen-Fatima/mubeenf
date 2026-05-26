@@ -39,8 +39,10 @@ export function About() {
           <div className="bento-icon">
             <HiCpuChip />
           </div>
-          <h3>E-commerce AI Builder</h3>
-          <p>AI agents for orders, support, and product discovery at scale.</p>
+          <div className="bento-specialty-body">
+            <h3>E-commerce AI Builder</h3>
+            <p>AI agents for orders, support, and product discovery at scale.</p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -54,8 +56,10 @@ export function About() {
           <div className="bento-icon">
             <HiSparkles />
           </div>
-          <h3>ROI-Focused</h3>
-          <p>Solutions that solve real problems and deliver measurable results.</p>
+          <div className="bento-specialty-body">
+            <h3>ROI-Focused</h3>
+            <p>Solutions that solve real problems and deliver measurable results.</p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -69,8 +73,10 @@ export function About() {
           <div className="bento-icon">
             <HiRocketLaunch />
           </div>
-          <h3>Fast Execution</h3>
-          <p>From concept to production with clean, maintainable code.</p>
+          <div className="bento-specialty-body">
+            <h3>Fast Execution</h3>
+            <p>From concept to production with clean, maintainable code.</p>
+          </div>
         </motion.div>
 
         {/* Code snippet decoration */}
