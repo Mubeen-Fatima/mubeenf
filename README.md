@@ -19,6 +19,7 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 - **Backend & APIs:** FastAPI, Django, Flask, Node.js
 - **Cloud & DevOps:** AWS, Azure, Docker, Kubernetes, CI/CD, Git
 - **AI Development Tools:** Claude Code, GitHub Copilot
+- **Process & Collaboration:** Agile/Scrum, Sprint Planning, Stakeholder Management, Jira, ClickUp, Notion
 
 ## Professional Experience
 
@@ -38,6 +39,7 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 - Managed the full development lifecycle for 10+ enterprise projects, coordinating stakeholders across Europe.
 - Built custom WordPress plugins and TYPO3 extensions serving 100K+ daily users, with optimized database queries and third-party API integrations.
 - Led Agile practices: daily standups, sprint planning, code reviews, and Git workflows.
+- Recognized in a written recommendation from Gosign's Head of HR for exceptional technical skill and consistently high-quality delivery.
 
 **Earlier Experience:** WordPress Developer & SEO Specialist, Freelance via Fiverr (Jun 2019 - Jun 2021) - delivered 50+ sites for international clients while completing a BS in Computer Science.
 
@@ -80,6 +82,4 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 - OpenCV Bootcamp, Grade 100% - OpenCV.org, 2024
 - TensorFlow Keras Bootcamp, Grade 100% - OpenCV.org, 2024
 
-## Languages
-
-English (Professional Working Proficiency), Urdu (Native), Punjabi (Native), Arabic (Basic)
+**Languages:** English (Professional Working Proficiency), Urdu (Native), Punjabi (Native), Arabic (Basic)
