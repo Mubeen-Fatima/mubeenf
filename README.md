@@ -11,11 +11,13 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 
 ## Technical Skills
 
-- **Languages:** Python, TypeScript, JavaScript, SQL
 - **Agentic AI & LLM Systems:** LangChain, LangGraph, OpenAI Agents SDK, Model Context Protocol (MCP), RAG Systems, Prompt Engineering
-- **System Design & Scalability:** API Design, Authentication & Authorization, Horizontal Scaling, Load Balancing, Caching, Database Indexing & Query Optimization, Latency & Bandwidth Optimization, Reliability & Uptime
+- **Agent Evals & Observability:** LangSmith, Custom Tracing & Logging, Labeled Evaluation Sets
 - **Vector Databases:** Qdrant, Pinecone, Chroma
+- **System Design & Scalability:** API Design, Authentication & Authorization, Horizontal Scaling, Load Balancing, Caching, Database Indexing & Query Optimization, Latency & Bandwidth Optimization, Reliability & Uptime
+- **Responsible AI:** Bias & Fairness Assessment, Production Guardrails & Safety Filtering
 - **ML/DL Frameworks:** PyTorch, TensorFlow, Hugging Face, Scikit-learn
+- **Programming Languages:** Python, TypeScript, JavaScript, SQL
 - **Backend & APIs:** FastAPI, Django, Flask, Node.js
 - **Cloud & DevOps:** AWS, Azure, Docker, Kubernetes, CI/CD, Git
 - **AI Development Tools:** Claude Code, GitHub Copilot
@@ -31,6 +33,7 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 - Made system design and infrastructure trade-off decisions - service boundaries, database and vector-store selection, caching, and scaling strategy - to keep production agentic systems performant and reliable.
 - Engineered RAG pipelines processing 5,000+ documents with 95% retrieval accuracy, measured against a labeled evaluation set, using Qdrant and Pinecone for document search and automated customer support.
 - Use Claude Code and GitHub Copilot as part of the daily development workflow for production agentic systems.
+- Used LangSmith and custom tracing/logging for agent observability and debugging, and implemented guardrails and safety filtering to keep agent outputs in-scope.
 - Run Agile sprints, risk assessments, and technical documentation for enterprise deployments on Azure and AWS.
 
 **Backend Developer & Project Coordinator**
@@ -38,8 +41,7 @@ Senior Agentic AI Engineer with 4 years in software engineering, including 2.5 y
 
 - Managed the full development lifecycle for 10+ enterprise projects, coordinating stakeholders across Europe.
 - Built custom WordPress plugins and TYPO3 extensions serving 100K+ daily users, with optimized database queries and third-party API integrations.
-- Led Agile practices: daily standups, sprint planning, code reviews, and Git workflows.
-- Recognized in a written recommendation from Gosign's Head of HR for exceptional technical skill and consistently high-quality delivery.
+- Led Agile practices (daily standups, sprint planning, code reviews, Git workflows); recognized in a written recommendation from Gosign's Head of HR for exceptional technical skill and consistently high-quality delivery.
 
 **Earlier Experience:** WordPress Developer & SEO Specialist, Freelance via Fiverr (Jun 2019 - Jun 2021) - delivered 50+ sites for international clients while completing a BS in Computer Science.
 
