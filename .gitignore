@@ -11,8 +11,11 @@ dist/
 vite.config.js
 vite.config.d.ts
 
-# Local settings
-.claude/settings.local.json
+# Claude & Spec-Driven Development
+.claude/
+.specify/
+specs/
+history/
 
 # System files
 nul
