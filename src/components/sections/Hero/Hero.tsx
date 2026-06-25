@@ -138,7 +138,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <span className="text-gradient">E-commerce AI Agents</span> Builder
+          Senior <span className="text-gradient">Agentic AI</span> Engineer
         </motion.h2>
 
         <motion.p
@@ -147,8 +147,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I create autonomous AI systems for e-commerce automation and agentic workflows
-          that help businesses operate smarter and scale faster.
+          I build production multi-agent and RAG systems for e-commerce, healthcare,
+          and enterprise clients—turning complex AI workflows into reliable, scalable solutions.
         </motion.p>
 
         <motion.div

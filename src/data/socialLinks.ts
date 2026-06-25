@@ -21,14 +21,14 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: 'GitHub',
-    url: 'https://github.com/mubeenf',
+    url: 'https://github.com/Mubeen-Fatima',
     icon: 'github',
     label: 'View GitHub profile',
   },
 ];
 
 export const siteStats = {
-  jobSuccessRate: '100%',
+  jobSuccessRate: '95%',
   completedJobs: 9,
   totalEarnings: '$3,400+',
 };

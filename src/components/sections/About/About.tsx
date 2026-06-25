@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { HiSparkles, HiRocketLaunch, HiCpuChip } from 'react-icons/hi2';
+import { HiSparkles, HiRocketLaunch, HiShoppingCart } from 'react-icons/hi2';
 import { SectionWrapper } from '../../ui/SectionWrapper';
 import './About.css';
 
@@ -21,9 +21,9 @@ export function About() {
         >
           <div className="bento-glow" />
           <p className="bento-intro">
-            I build <span className="text-gradient">autonomous AI systems</span> that help businesses
-            operate smarter. From e-commerce automation to complex agentic workflows—I turn ideas
-            into production-ready solutions.
+            I build <span className="text-gradient">production multi-agent and RAG systems</span> for
+            e-commerce, healthcare, and enterprise clients. From automated order pipelines to intelligent
+            document retrieval—I ship reliable, scalable AI that delivers measurable results.
           </p>
         </motion.div>
 
@@ -37,11 +37,11 @@ export function About() {
           whileHover={{ y: -5 }}
         >
           <div className="bento-icon">
-            <HiCpuChip />
+            <HiShoppingCart />
           </div>
           <div className="bento-specialty-body">
-            <h3>E-commerce AI Builder</h3>
-            <p>AI agents for orders, support, and product discovery at scale.</p>
+            <h3>E-commerce AI</h3>
+            <p>Multi-agent workflows for orders, inventory, support, and product discovery at scale.</p>
           </div>
         </motion.div>
 
@@ -57,8 +57,8 @@ export function About() {
             <HiSparkles />
           </div>
           <div className="bento-specialty-body">
-            <h3>ROI-Focused</h3>
-            <p>Solutions that solve real problems and deliver measurable results.</p>
+            <h3>Multi-Agent & RAG</h3>
+            <p>LangChain, LangGraph, and OpenAI Agents SDK for complex enterprise workflows.</p>
           </div>
         </motion.div>
 
@@ -74,8 +74,8 @@ export function About() {
             <HiRocketLaunch />
           </div>
           <div className="bento-specialty-body">
-            <h3>Fast Execution</h3>
-            <p>From concept to production with clean, maintainable code.</p>
+            <h3>Production-Ready</h3>
+            <p>From concept to deployment with clean, maintainable, scalable code.</p>
           </div>
         </motion.div>
 

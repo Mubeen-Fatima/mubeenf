@@ -8,6 +8,7 @@ import {
   SiNodedotjs,
   SiFastapi,
   SiDjango,
+  SiFlask,
   SiSelenium,
   SiZapier,
   SiJira,
@@ -18,6 +19,13 @@ import {
   SiShopify,
   SiWoo,
   SiAmazon,
+  SiPytorch,
+  SiTensorflow,
+  SiHuggingface,
+  SiScikitlearn,
+  SiDocker,
+  SiKubernetes,
+  SiGit,
 } from 'react-icons/si';
 import {
   HiCpuChip,
@@ -33,56 +41,91 @@ import {
   HiShoppingCart,
   HiCube,
   HiMagnifyingGlass,
-  HiDocumentText,
   HiArrowPath,
   HiSquare3Stack3D,
+  HiCloud,
+  HiBeaker,
+  HiTableCells,
+  HiServer,
 } from 'react-icons/hi2';
 import { SectionWrapper } from '../../ui/SectionWrapper';
 import { techStack, techCategories } from '../../../data/techStack';
 import './TechStack.css';
 
-// Icon mapping for each tech
 const techIcons: Record<string, React.ReactNode> = {
+  // Languages
   python: <SiPython />,
   javascript: <SiJavascript />,
   typescript: <SiTypescript />,
+  sql: <HiTableCells />,
+
+  // AI & LLM
   openai: <SiOpenai />,
+  openaiagentssdk: <SiOpenai />,
   langchain: <HiLink />,
   langgraph: <HiCpuChip />,
   claude: <SiAnthropic />,
   mcp: <HiCommandLine />,
-  ucp: <HiSquare3Stack3D />,
   rag: <HiCircleStack />,
-  vectordb: <HiCircleStack />,
+  promptengineering: <HiSparkles />,
+
+  // Vector Databases
+  qdrant: <HiServer />,
+  pinecone: <HiSquare3Stack3D />,
+  chroma: <HiCube />,
+
+  // E-commerce AI
   shopify: <SiShopify />,
   woocommerce: <SiWoo />,
   amazon: <SiAmazon />,
   orderautomation: <HiArrowPath />,
   inventoryai: <HiCube />,
   aisearch: <HiMagnifyingGlass />,
-  productfeed: <HiDocumentText />,
+
+  // ML/DL
+  pytorch: <SiPytorch />,
+  tensorflow: <SiTensorflow />,
+  huggingface: <SiHuggingface />,
+  scikitlearn: <SiScikitlearn />,
+
+  // Backend & APIs
   fastapi: <SiFastapi />,
   react: <SiReact />,
   nodejs: <SiNodedotjs />,
   django: <SiDjango />,
+  flask: <SiFlask />,
   restapi: <HiCog6Tooth />,
+
+  // Cloud & DevOps
+  aws: <SiAmazon />,
+  azure: <HiCloud />,
+  docker: <SiDocker />,
+  kubernetes: <SiKubernetes />,
+  cicd: <HiArrowPath />,
+  git: <SiGit />,
+
+  // Automation
   selenium: <SiSelenium />,
   playwright: <HiPlay />,
   scrapy: <SiPython />,
   zapier: <SiZapier />,
   n8n: <HiCog6Tooth />,
+
+  // Project Management
   jira: <SiJira />,
   clickup: <SiClickup />,
   notion: <SiNotion />,
   github: <SiGithub />,
 };
 
-// Category icons
 const categoryIcons: Record<string, React.ReactNode> = {
   'Languages': <HiCodeBracket />,
   'AI & LLM': <HiSparkles />,
+  'Vector Databases': <HiCircleStack />,
   'E-commerce AI': <HiShoppingCart />,
-  'Development': <HiCpuChip />,
+  'ML/DL': <HiBeaker />,
+  'Backend & APIs': <HiCpuChip />,
+  'Cloud & DevOps': <HiCloud />,
   'Automation': <HiWrenchScrewdriver />,
   'Project Management': <HiClipboardDocumentList />,
 };
